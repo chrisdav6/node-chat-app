@@ -2,7 +2,7 @@
   "name": "09-node-chat-app",
   "version": "1.0.0",
   "description": "Node Chat app using socket.io",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js"
   },
@@ -12,6 +12,7 @@
   "author": "Chris Davis",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
   }
 }
