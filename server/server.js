@@ -16,14 +16,13 @@ var port = process.env.PORT || 8080;
 io.on("connection", function(socket) {
   console.log("New User Connected!");
   
-  socket.emit("newMessage", {
-    from: "Chris",
-    text: "My New Message",
-    createdAt: 1030
-  });
-  
-  socket.on("createMessage", function(newMessage) {
-    console.log("createMessage", newMessage);
+  socket.on("createMessage", function(message) {
+    console.log("createMessage", message);
+    io.emit("newMessage", {
+      from: message.from,
+      text: message.text,
+      createdAt: new Date().getTime()
+    });
   });
   
   socket.on("disconnect", function() {
